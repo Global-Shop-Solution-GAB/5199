@@ -1,0 +1,519 @@
+Program.Sub.ScreenSU.Start
+Gui.F_InvTag..Create
+Gui.F_InvTag..Size(7050,3045)
+Gui.F_InvTag..MinX(0)
+Gui.F_InvTag..MinY(0)
+Gui.F_InvTag..Position(0,0)
+Gui.F_InvTag..BackColor(-2147483633)
+Gui.F_InvTag..MousePointer(0)
+Gui.F_InvTag..Event(UnLoad,F_InvTag_UnLoad)
+Gui.F_InvTag..Caption("Inventory Tag")
+Gui.F_InvTag..Sizeable(False)
+Gui.F_InvTag..MaxButton(False)
+Gui.F_InvTag..MinButton(False)
+Gui.F_InvTag.frameReq.Create(Frame)
+Gui.F_InvTag.frameReq.Size(6690,960)
+Gui.F_InvTag.frameReq.Position(45,120)
+Gui.F_InvTag.frameReq.Caption("Mandatory Fields")
+Gui.F_InvTag.txtPart.Create(TextBox,"",True,1410,300,0,105,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_InvTag.txtPart.Parent("frameReq")
+Gui.F_InvTag.txtPart.MaxLength(17)
+Gui.F_InvTag.txtPart.Event(LostFocus,txtPart_LostFocus)
+Gui.F_InvTag.txtPart.TabStop(True)
+Gui.F_InvTag.txtPart.TabIndex(1)
+Gui.F_InvTag.txtPart.Event(GotFocus,txtPart_GotFocus)
+Gui.F_InvTag.cmdPartBrowser.Create(Button)
+Gui.F_InvTag.cmdPartBrowser.Size(360,330)
+Gui.F_InvTag.cmdPartBrowser.Position(2100,495)
+Gui.F_InvTag.cmdPartBrowser.Parent("frameReq")
+Gui.F_InvTag.cmdPartBrowser.Caption("^")
+Gui.F_InvTag.cmdPartBrowser.Event(Click,cmdPartBrowser_Click)
+Gui.F_InvTag.cmdPartBrowser.TabStop(True)
+Gui.F_InvTag.cmdPartBrowser.TabIndex(3)
+Gui.F_InvTag.lblPart.Create(Label,"Part Number",True,1095,255,0,105,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblPart.Parent("frameReq")
+Gui.F_InvTag.lblDescription.Create(Label,"Description",True,1710,255,0,2670,285,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblDescription.Parent("frameReq")
+Gui.F_InvTag.txtDescription.Create(TextBox,"",True,2025,300,0,2670,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_InvTag.txtDescription.Parent("frameReq")
+Gui.F_InvTag.txtDescription.MaxLength(30)
+Gui.F_InvTag.txtDescription.TabStop(True)
+Gui.F_InvTag.txtDescription.TabIndex(4)
+Gui.F_InvTag.txtDescription.Event(GotFocus,txtDescription_GotFocus)
+Gui.F_InvTag.txtDescription.Event(LostFocus,txtDescription_LostFocus)
+Gui.F_InvTag.lblUM.Create(Label,"UM",True,495,255,0,4800,300,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblUM.Parent("frameReq")
+Gui.F_InvTag.txtUM.Create(TextBox,"",True,510,300,0,4800,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_InvTag.txtUM.Parent("frameReq")
+Gui.F_InvTag.txtUM.MaxLength(3)
+Gui.F_InvTag.txtUM.TabStop(True)
+Gui.F_InvTag.txtUM.TabIndex(5)
+Gui.F_InvTag.txtUM.Event(GotFocus,txtUM_GotFocus)
+Gui.F_InvTag.txtUM.Event(LostFocus,txtUM_LostFocus)
+Gui.F_InvTag.txtQTY.Create(TextBox,"",True,1215,300,0,5400,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_InvTag.txtQTY.Parent("frameReq")
+Gui.F_InvTag.txtQTY.NumericOnly(1)
+Gui.F_InvTag.txtQTY.TabStop(True)
+Gui.F_InvTag.txtQTY.TabIndex(6)
+Gui.F_InvTag.txtQTY.Event(GotFocus,txtQTY_GotFocus)
+Gui.F_InvTag.txtQTY.Event(LostFocus,txtQTY_LostFocus)
+Gui.F_InvTag.lblQty.Create(Label,"Quantity",True,1260,255,0,5400,300,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblQty.Parent("frameReq")
+Gui.F_InvTag.txtRev.Create(TextBox,"",True,345,300,0,1620,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_InvTag.txtRev.Parent("frameReq")
+Gui.F_InvTag.txtRev.MaxLength(3)
+Gui.F_InvTag.txtRev.Event(LostFocus,txtRev_LostFocus)
+Gui.F_InvTag.txtRev.TabStop(True)
+Gui.F_InvTag.txtRev.TabIndex(2)
+Gui.F_InvTag.txtRev.Event(GotFocus,txtRev_GotFocus)
+Gui.F_InvTag.lblRev.Create(Label,"Rev",True,420,270,0,1620,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblRev.Parent("frameReq")
+Gui.F_InvTag.lblVendor.Create(Label,"Vendor",True,870,255,0,1380,1245,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.txtVendor.Create(TextBox,"",True,1995,300,0,1365,1500,True,0,"Arial",8,-2147483643,1)
+Gui.F_InvTag.txtVendor.MaxLength(30)
+Gui.F_InvTag.txtVendor.TabStop(True)
+Gui.F_InvTag.txtVendor.TabIndex(8)
+Gui.F_InvTag.txtVendor.Event(GotFocus,txtVendor_GotFocus)
+Gui.F_InvTag.txtVendor.Event(LostFocus,txtVendor_LostFocus)
+Gui.F_InvTag.lblPO.Create(Label,"P.O.",True,675,255,0,105,1245,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblSerial.Create(Label,"Serial",True,840,255,0,3510,1245,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.lblBin.Create(Label,"Bin",True,510,255,0,5805,1245,True,0,"Arial",8,-2147483633,0)
+Gui.F_InvTag.cmdPrint.Create(Button)
+Gui.F_InvTag.cmdPrint.Size(1485,390)
+Gui.F_InvTag.cmdPrint.Position(5205,1890)
+Gui.F_InvTag.cmdPrint.Caption("Print")
+Gui.F_InvTag.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.F_InvTag.cmdPrint.TabStop(True)
+Gui.F_InvTag.cmdPrint.TabIndex(11)
+Gui.F_InvTag.cboPO.Create(ComboBox)
+Gui.F_InvTag.cboPO.Size(1080,330)
+Gui.F_InvTag.cboPO.Position(105,1500)
+Gui.F_InvTag.cboPO.Event(LostFocus,cboPO_LostFocus)
+Gui.F_InvTag.cboPO.TabStop(True)
+Gui.F_InvTag.cboPO.TabIndex(7)
+Gui.F_InvTag.cboPO.Event(GotFocus,cboPO_GotFocus)
+Gui.F_InvTag.cboSerial.Create(ComboBox)
+Gui.F_InvTag.cboSerial.Size(2130,330)
+Gui.F_InvTag.cboSerial.Position(3525,1500)
+Gui.F_InvTag.cboSerial.Event(LostFocus,cboSerial_LostFocus)
+Gui.F_InvTag.cboSerial.TabStop(True)
+Gui.F_InvTag.cboSerial.TabIndex(9)
+Gui.F_InvTag.cboSerial.Event(GotFocus,cboSerial_GotFocus)
+Gui.F_InvTag.cboBin.Create(ComboBox)
+Gui.F_InvTag.cboBin.Size(885,330)
+Gui.F_InvTag.cboBin.Position(5805,1500)
+Gui.F_InvTag.cboBin.Event(LostFocus,cboBin_LostFocus)
+Gui.F_InvTag.cboBin.TabStop(True)
+Gui.F_InvTag.cboBin.TabIndex(10)
+Gui.F_InvTag.cboBin.Event(GotFocus,cboBin_GotFocus)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sPart.Declare
+v.Global.sDesc.Declare
+v.Global.sUM.Declare
+v.Global.iQTY.Declare
+v.Global.sPO.Declare
+v.Global.sVendor.Declare
+v.Global.sSerial.Declare
+v.Global.sBin.Declare
+v.Global.iRunID.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'loads up the datatables that we need for the program to run
+f.Intrinsic.Control.CallSub(Load_Inv)
+f.Intrinsic.Control.CallSub(LoadIcon)
+gui.F_InvTag..Show
+Program.Sub.Main.End
+
+Program.Sub.cmdPartBrowser_Click.Start
+v.Local.sRet.Declare
+v.Local.sList.Declare
+v.Local.sList.Redim(0,5)
+v.Local.sFilter.Declare
+v.Local.sBuildHolder.Declare
+v.Local.sIcon.Declare
+
+'clearing the Dropdown
+v.Local.sRet.Set("")
+'launch browser for parts.
+f.Intrinsic.Control.If(v.Local.sBuildHolder, <>, "")
+	Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	f.Intrinsic.UI.SetClipboardText(v.Local.sBuildHolder)
+	f.Intrinsic.UI.CommonBrowser(100, "", v.Local.sRet)
+	f.Intrinsic.UI.ClearClipboard
+F.Intrinsic.Control.Else
+	Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	f.Intrinsic.UI.CommonBrowser(100, "", v.Local.sRet)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+	'Split the return variable and save the Part and Description to the global variables
+	f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sList)
+	f.Intrinsic.String.Build("{0}{1}", v.Local.sList(0), v.Local.sList(1), v.Global.sPart)
+	'v.Global.sPart.Set(v.Local.sList(0))
+	v.Global.sDesc.Set(v.Local.sList(3))
+	'Display the values from Part and Description 
+	gui.F_InvTag.txtPart.Text(v.Local.sList(0))
+	gui.F_InvTag.txtRev.Text(v.Local.sList(1))
+	gui.F_InvTag.txtDescription.Text(v.Global.sDesc)
+	'creates filter for parts in the inventory dataview
+	f.Intrinsic.String.Build("Part = '{0}'", v.Global.sPart, v.Local.sFilter)	
+	f.Data.DataView.Create("invDT", "invUmDv", 22, v.Local.sFilter, "")
+	'gets the Inventory UM according to the part number
+	v.Global.sUM.Set(v.DataView.invDT!invUMDv(0).UM_Inventory!FieldVal)
+	gui.F_InvTag.txtUM.Text(v.Global.sUM)
+	'loads the po available to tha part number
+	f.Intrinsic.Control.CallSub(loadPoDDL)
+	'close dataview because this is an event and gets recalled.
+	f.Data.DataView.Close("invDT", "invUmDv")
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdPartBrowser_Click.End
+
+Program.Sub.Load_Inv.Start
+v.Local.sSQL.Declare
+'f.Intrinsic.ui.Msgbox(v.Ambient.Date!FieldValPervasiveDate)
+'get data from psql once.
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+	f.Data.DataTable.CreateFromSQL("invDT", "con", "Select part, Description, UM_Inventory, location, Product_line, Bin from v_inventory_mstr", true)
+	f.Data.DataTable.CreateFromSQL("vendorDT", "con", "Select vendor, name_vendor from v_vendor_master", true)
+	f.Data.DataTable.CreateFromSQL("poDT", "con", "Select purchase_order, part, vendor from v_po_lines", true)
+	f.Data.DataTable.CreateFromSQL("itemDT", "con", "Select part, location, lot, bin, serial_number, po_number, po_line_no from v_item_master", true)
+	f.Intrinsic.String.Build("Delete From GCG_5199_BI_Inv_Tag where TrmlID = '{0}'", v.Caller.Terminal, v.Local.sSQL)
+	f.ODBC.Connection!con.Execute(v.Local.sSQL)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.CallSub(ErrorMsg)
+f.Intrinsic.Control.EndTry
+Program.Sub.Load_Inv.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5199_Inventory_Tag.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Ambient.CurrentSubroutine, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.loadPoDDL.Start
+v.Local.sFilter.Declare
+'loads the dropdown with po numbers that have this part on their lines
+gui.F_InvTag.cboPO.Enabled(False)
+'gui.F_InvTag.cboPO.ClearItems
+f.Intrinsic.String.Build("Part = '{0}'", v.Global.sPart, v.Local.sFilter)
+f.Data.DataView.Create("poDT", "poDV", 22, v.Local.sFilter, "")
+gui.F_InvTag.cboPO.AddItems("DataView", "poDT", "poDV", "purchase_order", "purchase_order")
+gui.F_InvTag.cboPO.ListIndex(-1)
+f.Data.DataView.Close("poDT", "poDV")
+gui.F_InvTag.cboPO.Enabled(True)
+Program.Sub.loadPoDDL.End
+
+Program.Sub.F_InvTag_UnLoad.Start
+f.Data.DataTable.Close("invDT")
+f.Data.DataTable.Close("vendorDT")
+f.Data.DataTable.Close("poDT")
+f.Intrinsic.Control.End
+Program.Sub.F_InvTag_UnLoad.End
+
+Program.Sub.loadSerialDDL.Start
+v.Local.sFilter.Declare
+gui.F_InvTag.cboSerial.Enabled(false)
+f.Intrinsic.String.Build("po_number = '{0}'", v.Global.sPO, v.Local.sFilter)
+f.Data.DataView.Create("itemDT", "itemSerialDv", 22, v.Local.sFilter, "")
+gui.F_InvTag.cboSerial.AddItems("DataView", "itemDT", "itemSerialDv", "serial_number", "serial_number")
+f.Data.DataView.Close("itemDT", "itemSerialDv")
+gui.F_InvTag.cboSerial.Enabled(true)
+Program.Sub.loadSerialDDL.End
+
+Program.Sub.loadBinDDL.Start
+v.Local.sFilter.Declare
+gui.F_InvTag.cboBin.Enabled(false)
+f.Intrinsic.String.Build("po_number = '{0}' and serial_number = '{1}'", v.Global.sPO, v.Global.sSerial ,v.Local.sFilter)
+f.Data.DataView.Create("itemDT", "itemBinDv", 22, v.Local.sFilter, "")
+gui.F_InvTag.cboSerial.AddItems("DataView", "itemDT", "itemBinDv", "bin", "bin")
+f.Data.DataView.Close("itemDT", "itemBinDv")
+gui.F_InvTag.cboBin.Enabled(true)
+Program.Sub.loadBinDDL.End
+
+Program.Sub.cmdPrint_Click.Start
+v.Local.sSQL.Declare
+v.Local.iRunID.Declare
+v.Local.iLogID.Declare
+v.Local.sParamValues.Declare
+
+f.Intrinsic.Control.CallSub(dissableAll)
+
+f.Global.BI.GetRunID(v.Local.iRunID)
+
+f.Global.BI.StartLogging(v.Global.iRunID, -1, -1, "GCG_5199_BI_Inv_Tag", v.Local.iLogID)
+
+f.Intrinsic.Control.If(v.Screen.F_InvTag!txtPart.Text!FieldValTrim, =, "")
+	'f.Intrinsic.UI.Msgbox("Please fill the mandatory fields")
+	f.Intrinsic.UI.Msgbox("Please fill the Part field.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.F_InvTag!txtDescription.Text!FieldValTrim, =, "")
+	'f.Intrinsic.UI.Msgbox("Please fill the mandatory fields")
+	f.Intrinsic.UI.Msgbox("Please fill the Description field.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.F_InvTag!txtUM.Text!FieldValTrim, =, "")
+	'f.Intrinsic.UI.Msgbox("Please fill the mandatory fields")
+	f.Intrinsic.UI.Msgbox("Please fill the UM field.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.F_InvTag!txtQTY.Text!FieldValTrim, =, "")
+	'f.Intrinsic.UI.Msgbox("Please fill the mandatory fields")
+	f.Intrinsic.UI.Msgbox("Please fill the Quantity field.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("{0}{1}", v.Screen.F_InvTag!txtPart.Text!FieldVal, v.Screen.F_InvTag!txtRev.Text!FieldValTrim, v.Global.sPart)
+'v.Global.sPart.Set(v.Screen.F_InvTag!txtPart.Text!FieldValTrim)
+v.Global.sDesc.Set(v.Screen.F_InvTag!txtDescription.Text!FieldValTrim)
+v.Global.sUM.Set(v.Screen.F_InvTag!txtUM.Text!FieldValTrim)
+v.Global.sPO.Set(v.Screen.F_InvTag!cboPO.Value!FieldValTrim)
+v.Global.sVendor.Set(v.Screen.F_InvTag!txtVendor.Text!FieldValTrim)
+v.Global.sSerial.Set(v.Screen.F_InvTag!cboSerial.Value!FieldValTrim)
+v.Global.sBin.Set(v.Screen.F_InvTag!cboBin.Value!FieldValTrim)
+
+f.Intrinsic.String.Build("insert into GCG_5199_BI_Inv_Tag (Part, Description, UM, Quantity, PO_Number, Vendor, Serial, Bin, GsUser, AmbientDate, RunID, TrmlID) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}')", v.Global.sPart, v.Global.sDesc, v.Global.sUM, v.Screen.F_InvTag!txtQTY.Text!FieldValTrim,v.Global.sPO, v.Global.sVendor, v.Global.sSerial, v.Global.sBin, v.Caller.User, v.Ambient.Date!FieldValPervasiveDate, v.Local.iRunID, v.Caller.Terminal, v.Local.sSQL)
+
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.CallSub(ErrorMsg)
+f.Intrinsic.Control.EndTry
+
+f.Global.BI.StopLogging(v.Local.iLogID)
+V.Local.iRPTID.Declare(Long,0)
+F.Global.BI.GetIDFromName("GCG_5199_BI_Inv_Tag.rpt",V.Local.iRPTID)
+V.Local.sParam.Declare(String,"RunID*!*Terminal")
+F.Intrinsic.String.Split(V.Local.sParam,"*!*",V.Local.sParam)
+f.Intrinsic.String.Build("{0}*!*{1}", v.Local.iRunID, v.Caller.Terminal, v.Local.sParamValues)
+F.Intrinsic.String.Split(V.Local.sParamValues,"*!*",V.Local.sParamValues)
+'f.Global.BI.RunReportPreProcessor(v.Local.iRunID,  v.Local.iLogID, "RunID*!*Terminal", v.Local.sParamValues, "", 16, true, "", -1, "", -1, "", "", v.Local.iLogID)
+F.Global.BI.PrintReport(V.Local.iRptId,0,V.Local.sParam,V.Local.sParamValues,"",True)
+f.Intrinsic.Control.CallSub(enableAll)
+f.Intrinsic.Control.ExitSub
+'f.Intrinsic.Control.End
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.cboPO_LostFocus.Start
+v.Local.sFilter.Declare
+v.Global.sPO.Set(v.Screen.F_InvTag!cboPO.Value!FieldValue)
+v.Local.sVendor.Declare
+v.Local.iCnt.Declare
+v.Local.iCnt2.Declare
+gui.F_InvTag.cboPO.BackColor(v.Color.White)
+gui.F_InvTag.cboSerial.Enabled(false)
+gui.F_InvTag.cboBin.Enabled(false)
+
+gui.F_InvTag.txtVendor.Text("")
+
+f.Intrinsic.String.Build("purchase_order = '{0}'", v.Global.sPO, v.Local.sFilter)
+f.Data.DataView.Create("poDT", "povDV", 22, v.Local.sFilter, "")
+f.Intrinsic.Control.If(v.DataView.poDT!povDV.RowCount, >, 0)
+	v.Local.sVendor.Set(v.DataView.poDT!povDV(0).vendor!FieldValTrim)
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("poDT", "povDV")
+v.Local.sFilter.Set("")
+
+f.Intrinsic.Control.If(v.Local.sVendor, <>, "")
+	f.Intrinsic.String.Build("vendor = '{0}'", v.Local.sVendor, v.Local.sFilter)
+	f.Data.DataView.Create("vendorDT", "vendorDV", 22, v.Local.sFilter, "")
+	f.Intrinsic.Control.If(v.DataView.vendorDT!vendorDV.RowCount, >, 0)
+		gui.F_InvTag.txtVendor.Text(v.DataView.vendorDT!vendorDV(0).name_vendor!FieldValTrim)
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("vendorDT", "vendorDV")
+	f.Intrinsic.Control.CallSub(loadSerialDDL)
+f.Intrinsic.Control.EndIf
+gui.F_InvTag.cboSerial.Enabled(true)
+gui.F_InvTag.cboBin.Enabled(true)
+Program.Sub.cboPO_LostFocus.End
+
+Program.Sub.cboSerial_LostFocus.Start
+gui.F_InvTag.cboSerial.BackColor(v.Color.White)
+v.Global.sSerial.Set(v.Screen.F_InvTag!cboSerial.Value!FieldValTrim)
+'gui.F_InvTag.cboBin.ClearItems
+Program.Sub.cboSerial_LostFocus.End
+
+Program.Sub.cboBin_LostFocus.Start
+gui.F_InvTag.cboBin.BackColor(v.Color.White)
+v.Global.sBin.Set(v.Screen.F_InvTag!cboBin.Value!FieldValTrim)
+Program.Sub.cboBin_LostFocus.End
+
+Program.Sub.LoadIcon.Start
+v.Local.sIcon.Declare
+'sets the icon
+f.Intrinsic.String.Build("{0}\ART\gss2.ico", v.Caller.GlobalDir, v.Local.sIcon)
+gui.F_InvTag..Icon(v.Local.sIcon)
+Program.Sub.LoadIcon.End
+
+Program.Sub.txtPart_LostFocus.Start
+v.Local.sBuildHolder.Declare
+v.Local.sFilter.Declare
+v.Local.sPart.Declare
+v.Local.sRev.Declare
+gui.F_InvTag.txtPart.BackColor(v.Color.White)
+
+f.Intrinsic.String.Build("{0}{1}", v.Screen.F_InvTag!txtPart.Text!FieldValTrim, v.Screen.F_InvTag!txtRev.Text!FieldValTrim, v.Local.sBuildHolder)
+
+'creates filter for parts in the inventory dataview
+f.Intrinsic.String.Build("Part = '{0}'", v.Local.sBuildHolder, v.Local.sFilter)	
+f.Data.DataView.Create("invDT", "invDv", 22, v.Local.sFilter, "")
+f.Intrinsic.Control.If(v.DataView.invDT!invDv.RowCount, >, 0)
+	'gets the Inventory UM according to the part number
+	v.Global.sPart.Set(v.Local.sBuildHolder)
+	v.Global.sDesc.Set(v.DataView.invDT!invDv(0).Description!FieldVal)
+	gui.F_InvTag.txtDescription.Text(v.Global.sDesc)
+	v.Global.sUM.Set(v.DataView.invDT!invDv(0).UM_Inventory!FieldVal)
+	gui.F_InvTag.txtUM.Text(v.Global.sUM)
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("invDT", "invDv")
+
+f.Intrinsic.String.RPad(v.Screen.F_InvTag!txtPart.Text!FieldValTrim, " ", 17, v.Local.sPart)
+f.Intrinsic.String.RPad(v.Screen.F_InvTag!txtRev.Text!FieldValTrim, " ", 3, v.Local.sRev)
+f.Intrinsic.String.Build("{0}{1}", v.Local.sPart, v.Local.sRev, v.Local.sBuildHolder)
+
+'creates filter for parts in the inventory dataview
+f.Intrinsic.String.Build("Part = '{0}'", v.Local.sBuildHolder, v.Local.sFilter)	
+f.Data.DataView.Create("invDT", "invDv", 22, v.Local.sFilter, "")
+f.Intrinsic.Control.If(v.DataView.invDT!invDv.RowCount, >, 0)
+	'gets the Inventory UM according to the part number
+	v.Global.sPart.Set(v.Local.sBuildHolder)
+	v.Global.sDesc.Set(v.DataView.invDT!invDv(0).Description!FieldVal)
+	gui.F_InvTag.txtDescription.Text(v.Global.sDesc)
+	v.Global.sUM.Set(v.DataView.invDT!invDv(0).UM_Inventory!FieldVal)
+	gui.F_InvTag.txtUM.Text(v.Global.sUM)
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("invDT", "invDv")
+Program.Sub.txtPart_LostFocus.End
+
+Program.Sub.txtRev_LostFocus.Start
+v.Local.sBuildHolder.Declare
+v.Local.sFilter.Declare
+v.Local.sPart.Declare
+v.Local.sRev.Declare
+gui.F_InvTag.txtRev.BackColor(v.Color.White)
+
+f.Intrinsic.String.Build("{0}{1}", v.Screen.F_InvTag!txtPart.Text!FieldVal, v.Screen.F_InvTag!txtRev.Text!FieldVal, v.Local.sBuildHolder)
+
+'creates filter for parts in the inventory dataview
+f.Intrinsic.String.Build("Part = '{0}'", v.Local.sBuildHolder, v.Local.sFilter)	
+f.Data.DataView.Create("invDT", "invDv", 22, v.Local.sFilter, "")
+f.Intrinsic.Control.If(v.DataView.invDT!invDv.RowCount, >, 0)
+	'gets the Inventory UM according to the part number
+	v.Global.sPart.Set(v.Local.sBuildHolder)
+	v.Global.sDesc.Set(v.DataView.invDT!invDv(0).Description!FieldVal)
+	gui.F_InvTag.txtDescription.Text(v.Global.sDesc)
+	v.Global.sUM.Set(v.DataView.invDT!invDv(0).UM_Inventory!FieldVal)
+	gui.F_InvTag.txtUM.Text(v.Global.sUM)
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("invDT", "invDv")
+
+f.Intrinsic.String.RPad(v.Screen.F_InvTag!txtPart.Text!FieldValTrim, " ", 17, v.Local.sPart)
+f.Intrinsic.String.RPad(v.Screen.F_InvTag!txtRev.Text!FieldValTrim, " ", 3, v.Local.sRev)
+f.Intrinsic.String.Build("{0}{1}", v.Local.sPart, v.Local.sRev, v.Local.sBuildHolder)
+
+'creates filter for parts in the inventory dataview
+f.Intrinsic.String.Build("Part = '{0}'", v.Local.sBuildHolder, v.Local.sFilter)	
+f.Data.DataView.Create("invDT", "invDv", 22, v.Local.sFilter, "")
+f.Intrinsic.Control.If(v.DataView.invDT!invDv.RowCount, >, 0)
+	'gets the Inventory UM according to the part number
+	v.Global.sPart.Set(v.Local.sBuildHolder)
+	v.Global.sDesc.Set(v.DataView.invDT!invDv(0).Description!FieldVal)
+	gui.F_InvTag.txtDescription.Text(v.Global.sDesc)
+	v.Global.sUM.Set(v.DataView.invDT!invDv(0).UM_Inventory!FieldVal)
+	gui.F_InvTag.txtUM.Text(v.Global.sUM)
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("invDT", "invDv")
+Program.Sub.txtRev_LostFocus.End
+
+Program.Sub.txtPart_GotFocus.Start
+gui.F_InvTag.txtPart.BackColor(v.Color.LtGreen)
+Program.Sub.txtPart_GotFocus.End
+
+Program.Sub.txtRev_GotFocus.Start
+gui.F_InvTag.txtRev.BackColor(v.Color.LtGreen)
+Program.Sub.txtRev_GotFocus.End
+
+Program.Sub.txtDescription_GotFocus.Start
+gui.F_InvTag.txtDescription.BackColor(v.Color.LtGreen)
+Program.Sub.txtDescription_GotFocus.End
+
+Program.Sub.txtUM_GotFocus.Start
+gui.F_InvTag.txtUM.BackColor(v.Color.LtGreen)
+Program.Sub.txtUM_GotFocus.End
+
+Program.Sub.txtQTY_GotFocus.Start
+gui.F_InvTag.txtQTY.BackColor(v.Color.LtGreen)
+Program.Sub.txtQTY_GotFocus.End
+
+Program.Sub.cboPO_GotFocus.Start
+gui.F_InvTag.cboPO.BackColor(v.Color.LtGreen)
+Program.Sub.cboPO_GotFocus.End
+
+Program.Sub.txtVendor_GotFocus.Start
+gui.F_InvTag.txtVendor.BackColor(v.Color.LtGreen)
+Program.Sub.txtVendor_GotFocus.End
+
+Program.Sub.cboSerial_GotFocus.Start
+gui.F_InvTag.cboSerial.BackColor(v.Color.LtGreen)
+Program.Sub.cboSerial_GotFocus.End
+
+Program.Sub.cboBin_GotFocus.Start
+gui.F_InvTag.cboBin.BackColor(v.Color.LtGreen)
+Program.Sub.cboBin_GotFocus.End
+
+Program.Sub.txtVendor_LostFocus.Start
+gui.F_InvTag.txtVendor.BackColor(v.Color.White)
+Program.Sub.txtVendor_LostFocus.End
+
+Program.Sub.txtQTY_LostFocus.Start
+gui.F_InvTag.txtQTY.BackColor(v.Color.White)
+Program.Sub.txtQTY_LostFocus.End
+
+Program.Sub.txtUM_LostFocus.Start
+gui.F_InvTag.txtUM.BackColor(v.Color.White)
+Program.Sub.txtUM_LostFocus.End
+
+Program.Sub.txtDescription_LostFocus.Start
+gui.F_InvTag.txtDescription.BackColor(v.Color.White)
+Program.Sub.txtDescription_LostFocus.End
+
+Program.Sub.dissableAll.Start
+gui.F_InvTag.txtPart.Enabled(False)
+gui.F_InvTag.txtRev.Enabled(False)
+gui.F_InvTag.txtDescription.Enabled(False)
+gui.F_InvTag.txtUM.Enabled(False)
+gui.F_InvTag.txtQTY.Enabled(False)
+gui.F_InvTag.cboPO.Enabled(False)
+gui.F_InvTag.txtVendor.Enabled(False)
+gui.F_InvTag.cboSerial.Enabled(False)
+gui.F_InvTag.cboBin.Enabled(False)
+gui.F_InvTag.cmdPartBrowser.Enabled(False)
+gui.F_InvTag.cmdPrint.Enabled(False)
+Program.Sub.dissableAll.End
+
+Program.Sub.enableAll.Start
+gui.F_InvTag.txtPart.Enabled(True)
+gui.F_InvTag.txtRev.Enabled(True)
+gui.F_InvTag.txtDescription.Enabled(True)
+gui.F_InvTag.txtUM.Enabled(True)
+gui.F_InvTag.txtQTY.Enabled(True)
+gui.F_InvTag.cboPO.Enabled(True)
+gui.F_InvTag.txtVendor.Enabled(True)
+gui.F_InvTag.cboSerial.Enabled(True)
+gui.F_InvTag.cboBin.Enabled(True)
+gui.F_InvTag.cmdPartBrowser.Enabled(True)
+gui.F_InvTag.cmdPrint.Enabled(True)
+Program.Sub.enableAll.End
